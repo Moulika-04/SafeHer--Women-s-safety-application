@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHer</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+<!-- Landing Page -->
+<div id="home" class="page active">
+    <section class="hero">
+        <h1>🛡️ SafeHer</h1>
+        <p>Women's Safety & Travel Companion</p>
+
+        <div class="buttons">
+            <button onclick="showPage('login')" class="btn loginBtn">Login</button>
+            <button onclick="showPage('register')" class="btn registerBtn">Register</button>
+        </div>
+    </section>
+</div>
+
+<!-- Login Page -->
+<div id="login" class="page">
+    <div class="card form-card">
+        <h2>Login</h2>
+
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <button onclick="showPage('dashboard')" class="btn primary">
+            Login
+        </button>
+
+        <button onclick="showPage('home')" class="btn secondary">
+            Back
+        </button>
+    </div>
+</div>
+
+<!-- Register Page -->
+<div id="register" class="page">
+    <div class="card form-card">
+        <h2>Register</h2>
+
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Phone Number">
+        <input type="password" placeholder="Password">
+
+        <button onclick="showPage('dashboard')" class="btn primary">
+            Register
+        </button>
+
+        <button onclick="showPage('home')" class="btn secondary">
+            Back
+        </button>
+    </div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" class="page">
+
+    <header>
+        SafeHer Dashboard
+    </header>
+
+    <div class="dashboard">
+
+        <div class="grid">
+
+            <div class="box">
+                <h3>👤 Personal Information</h3>
+
+                <input id="name"
+                placeholder="Name">
+
+                <input id="age"
+                placeholder="Age">
+
+                <input id="phone"
+                placeholder="Phone">
+
+                <input id="emergency"
+                placeholder="Emergency Contact">
+
+                <button class="btn primary"
+                    onclick="saveProfile()">
+                    Save
+                </button>
+            </div>
+
+            <div class="box">
+              <h3>📍 Current Location</h3>
+
+               <p id="locationText">
+                  Click Refresh Location
+                </p>
+
+                <button class="btn primary"
+                  onclick="getLocation()">
+                   Refresh Location
+                </button>
+            </div>
+
+            <div class="box">
+                <h3>👮 Nearby Police</h3>
+
+                <button class="btn primary"
+                    onclick="searchPolice()">
+                    Find Police
+                </button>
+
+            </div>
+
+            <div class="box">
+                <h3>🏥 Nearby Hospital</h3>
+
+                <button class="btn primary"
+                    onclick="searchHospital()">
+                    Find Hospital
+                </button>
+
+            </div>
+            <div class="box">
+
+                <h3>🚕 SafeHer Ride Booking</h3>
+
+                <input
+                type="text"
+                id="pickup"
+                placeholder="Pickup Location">
+
+                <input
+                type="text"
+                id="drop"
+                placeholder="Drop Location">
+
+                <input
+                type="number"
+                id="members"
+                min="1"
+                max="4"
+                placeholder="Number of Members">
+
+                <select id="vehicleType">
+                 <option value="">Select Vehicle</option>
+                 <option value="scooty">🛵 Scooty</option>
+                 <option value="auto">🛺 Auto</option>
+                 <option value="car">🚗 Cab</option>
+                </select>
+
+                <button
+                  class="btn primary"
+                  onclick="findDrivers()">
+                  Find Riders
+                </button>
+
+                <div id="driverResults"></div>
+
+            </div>
+            <div class="box" id="availableDriversBox"
+              style="display:none;">
+
+              <h3>👩 Available Female Drivers</h3>
+
+              <div id="availableDrivers"></div>
+
+            </div>
+
+            <div class="box" id="rideCard"
+                style="margin-top:20px;display:none;">
+
+                <h3>🚕 Ride Tracking</h3>
+
+                <p id="rideStatus">
+                    Driver Assigned
+                </p>
+
+                <progress id="rideProgress"
+                    value="0"
+                    max="100"
+                    style="width:100%;">
+                </progress>
+
+                <br><br>
+
+                <button class="btn primary"
+                    onclick="completeRide()">
+                    Complete Ride
+                </button>
+
+            </div>
+            <div class="box"
+                id="feedbackCard"
+                style="display:none;margin-top:20px;">
+
+                <h3>⭐ Feedback</h3>
+
+                <input id="rating"
+                    placeholder="Rating (1-5)">
+
+                <textarea id="feedback"
+                    placeholder="Write feedback">
+                </textarea>
+
+                <button class="btn primary"
+                    onclick="submitFeedback()">
+                    Submit
+                </button>
+
+            </div>
+        </div>
+
+        <div class="map">
+          <iframe
+            id="mapFrame"
+            width="100%"
+            height="600"
+            style="border:0;"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps?q=17.3850,78.4867&z=14&output=embed">
+          </iframe >
+        </div>
+        <h2 class="contact-heading">Emergency Contacts</h2>
+
+        <div class="contact">👩 Mother - 9876543210</div>
+        <div class="contact">👭 Friend - 9876543211</div>
+        <div class="contact">👨 Brother - 9876543212</div>
+
+        <button onclick="sendSOS()" class="sos">
+            🚨 Emergency SOS
+        </button>
+
+        <button onclick="showPage('home')" class="btn secondary logout">
+            Logout
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
