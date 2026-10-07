@@ -1,0 +1,193 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff4d79,#ff8fab);
+min-height:100vh;
+}
+
+.page{
+display:none;
+}
+
+.active{
+display:block;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+.buttons{
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+}
+
+.loginBtn{
+background:white;
+color:#ff4d79;
+}
+
+.registerBtn{
+background:#222;
+color:white;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-card{
+width:400px;
+margin:80px auto;
+}
+
+.form-card h2{
+text-align:center;
+color:#ff4d79;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+.primary{
+width:100%;
+margin-top:15px;
+background:#ff4d79;
+color:white;
+}
+
+.secondary{
+width:100%;
+margin-top:10px;
+background:#666;
+color:white;
+}
+
+header{
+background:white;
+padding:15px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+color:#ff4d79;
+}
+
+.dashboard{
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.box{
+background:white;
+padding:20px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.box h3{
+margin-bottom:10px;
+}
+.map{
+    width:100%;
+    height:600px;
+    margin-top:25px;
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+#mapFrame{
+    width:100%;
+    height:100%;
+    border:none;
+    display:block;
+}
+.contact-heading{
+color:white;
+margin-top:25px;
+}
+
+.contact{
+background:white;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+}
+
+.sos{
+width:100%;
+margin-top:15px;
+padding:15px;
+background:red;
+color:white;
+border:none;
+border-radius:10px;
+font-size:20px;
+cursor:pointer;
+}
+
+.logout{
+margin-top:15px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+.form-card{
+width:90%;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+}
